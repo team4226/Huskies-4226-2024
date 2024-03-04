@@ -43,18 +43,46 @@ public final class Constants
   {
 
     // Joystick Deadband
-    public static final double LEFT_X_DEADBAND  = 0.1;
-    public static final double LEFT_Y_DEADBAND  = 0.1;
-    public static final double RIGHT_X_DEADBAND = 0.1;
+    public static final double LEFT_X_DEADBAND  = 0.15;
+    public static final double LEFT_Y_DEADBAND  = 0.15;
+    public static final double RIGHT_X_DEADBAND = 0.15;
     public static final double TURN_CONSTANT    = 6;
   }
 
   public static final class IntakeHead {
-
-    public static final int botthrow = 12;
-    public static final int topthrow = 11;
-    public static final int intake = 10;
+    //public static final int botthrow = 12;
+    //public static final int topthrow = 11;
+    //public static final int intake = 10;
     public static final int arm = 17;
+   }
+
+   public static final class IntakeConstants {
+    //intake subsystem constants
+    public static final int intakeMotorID = 10;
+    public static final double intake_P = 0.0002;
+    public static final double intake_I = 0.0;
+    public static final double intake_D = 0.0;
+    public static final double intake_FF = 0.0003;
+    public static final int intakeVelocity = 1500;
+    public static final int intakeVelocityREV = -1500;
+   }
+
+   public static final class ShooterConstants {
+    //shooter subsystem constants
+    public static final int topShooterMotorID = 11;
+    public static final int bottomShooterMotorID = 12;
+    public static final double shooter_P = 0.00025;
+    public static final double shooter_I = 0.0;
+    public static final double shooter_D = 0.0;
+    public static final double shooter_FF = 0.0002;
+    public static final int topShooterMotorVelocity = 3500;
+    public static final int bottomShooterMotorVelocity = 3500;
+   }
+
+   public static final class minMaxOutputConstants {
+    public static final int maxRPM = 5700;
+    public static final int maxOutput = 1;
+    public static final int minOutput = -1;
 
    }
 }

@@ -2,16 +2,15 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Constants;
-import frc.robot.subsystems.intake;
+import frc.robot.subsystems.scoreWheels;
 
-public class in extends Command {
+public class scoreOut extends Command {
     
-    private final intake m_intake;
+    private final scoreWheels m_scoreOut;
     
-    public in(intake subsystem){    
-        m_intake = subsystem;
-        addRequirements(m_intake);
-        
+    public scoreOut(scoreWheels subsystem){    
+        m_scoreOut = subsystem;
+        addRequirements(m_scoreOut);
     }
 
     @Override
@@ -20,12 +19,12 @@ public class in extends Command {
 
     @Override
     public void execute() {
-        m_intake.runIntake(Constants.IntakeConstants.intakeVelocity);
+        m_scoreOut.runShooter(-Constants.ShooterConstants.topShooterMotorVelocity, -Constants.ShooterConstants.bottomShooterMotorVelocity);
     }
 
     @Override
     public void end(boolean interrupted) {
-        m_intake.stop();
+        m_scoreOut.stop();
     }
 
     @Override

@@ -1,6 +1,7 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.Constants;
 import frc.robot.subsystems.intake;
 
 public class out extends Command {
@@ -8,7 +9,6 @@ public class out extends Command {
     private final intake m_intake;
     
     public out(intake subsystem){    
-
         m_intake = subsystem;
         addRequirements(m_intake);
         
@@ -20,12 +20,12 @@ public class out extends Command {
 
     @Override
     public void execute() {
-        m_intake.mymotorrun(-0.5);
+        m_intake.runIntake(Constants.IntakeConstants.intakeVelocityREV);
     }
 
     @Override
     public void end(boolean interrupted) {
-        m_intake.mymotorrun(0);
+        m_intake.stop();
     }
 
     @Override
